@@ -43,10 +43,10 @@ def interpolation(img, scale_factor):
 		return x2_bicubic(img)
 	if scale_factor == 4:
 		img = resize(img, 4)
-		return x2_bicubic(img)
+		return x4_bicubic(img)
 	if scale_factor == 8:
 		img = resize(img, 8)
-		return x2_bicubic(img)
+		return x8_bicubic(img)
 
 
 class DatasetFromFolder (data.Dataset):
