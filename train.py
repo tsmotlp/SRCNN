@@ -35,9 +35,7 @@ parser.add_argument ('--test_interval', type=int, default=10, help='interval for
 opt = parser.parse_args ()
 
 # 打印定义的变量
-# print(opt)
-
-# ...
+print(opt)
 
 seed = random.randint (1, 10000)
 print ("Random Seed: ", seed)
@@ -65,7 +63,6 @@ if opt.cuda:
 # 设置优化器函数
 print("===> Setting Optimizer")
 optimizer = torch.optim.Adam(network.parameters(), lr=opt.lr)
-# scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[50, 75, 100], gamma=0.5)  # lr decay
 
 # 可视化
 train_vis = Visualizer (env='training')
