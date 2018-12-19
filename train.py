@@ -147,9 +147,7 @@ def test_process(test_dataloader, network, save_img_dir):
 
 # 设计自适应的学习率
 def adjust_learning_rate(epoch):
-	lr = opt.lr * (0.1 ** (epoch // opt.step))
-	if lr < 1e-6:
-		lr = 1e-6
+	lr = opt.lr * (0.5 ** (epoch // opt.step))
 	return lr
 
 
