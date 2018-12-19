@@ -97,7 +97,7 @@ def train_process(dataloader, network, optimizer, loss_func, save_img_dir, epoch
 			inputs = inputs.cuda ()
 			labels = labels.cuda ()
 		# -----------------------------------------------
-		# training discriminator
+		# training 
 		# ------------------------------------------------
 		optimizer.zero_grad ()
 		gen_hr = network (inputs)  # 网络输出
@@ -116,7 +116,6 @@ def train_process(dataloader, network, optimizer, loss_func, save_img_dir, epoch
 		train_vis.img ('GT image', labels[idx].cpu ().detach ().numpy ())
 
 		# 打印结果：
-		# print('fake_out:{} real_out:{} L1_loss:{}'.format (fake_out, real_out, L1_loss (fake_imgs, real_imgs),edge_loss (fake_imgs, real_imgs)))
 		print('epoch:[{}/{}] batch:[{}/{}] loss:{:.10f} psnr:{:.10f}'.format(epoch, epochs, iteration, len(dataloader), loss.data[0], psnr))
 
 		if iteration % interval == 0:
